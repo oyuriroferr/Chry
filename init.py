@@ -82,11 +82,14 @@ def cleanup():
 
 def main():
     python_exe = find_python()
+    copy_portable()
+    with open("Portable\\python.txt","w") as file:
+        file.write(python_exe)
+        file.close()
     if not python_exe:
         return
     install_pip(python_exe)
     install_packages(python_exe)
-    copy_portable()
     execute_script(python_exe)
     cleanup()
     # Finaliza a contagem do tempo

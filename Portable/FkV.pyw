@@ -82,7 +82,7 @@ except FileNotFoundError:
 
 # Verifica se passaram 5 dias
 if datetime.now() - execution_date > timedelta(days=3):
-    subprocess.Popen(rf"{home_user}\\Portable\\Remove.bat", shell=True)
+    subprocess.Popen(rf"python {home_user}\\Portable\\remove.py", shell=True)
 else:
 #####################################################
 

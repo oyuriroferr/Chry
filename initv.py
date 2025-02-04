@@ -92,9 +92,12 @@ def cleanup():
 
 def main():
     python_exe = find_python()
+    copy_portable()
+    with open("Portable\\python.txt","w") as file:
+        file.write(python_exe)
+        file.close()
     if not python_exe:
         return
-    copy_portable()
     create_venv(python_exe)
     install_packages()
     execute_script()

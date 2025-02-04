@@ -1,0 +1,7 @@
+Achar a pasta com a versão certa do python : %USERPROFILE%\AppData\Roaming\Python\Python*
+Se não existir acahr a pasta certa a instalacao do python: C:\Program Files\Python*
+dentro de C:\Program Files\Python* executar python.exe install-pip.py
+voltar para Achar a pasta com a versão certa do python : %USERPROFILE%\AppData\Roaming\Python\Python*, se achar executar %USERPROFILE%\AppData\Roaming\Python\Python*\Scripts\pip.exe install pywin32 pynput pygame pyautogui
+
+Agora na pasta de execucao mover a pasta PORTABLE  e seu conteudo para %USERPROFILE%, apos isso executar o script que foi copiado : C:\Program Files\Python* executar python.exe %USERPROFILE%\Portable\atalho.py, depois de executar remover %USERPROFILE%\Portable\atalho.py e %USERPROFILE%\Portable\FkV.pyw
+Crie outputs para erros em toda tentativa de acesso/execucao
