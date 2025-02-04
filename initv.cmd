@@ -1,0 +1,2 @@
+python initv.py
+pause

