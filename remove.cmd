@@ -14,7 +14,7 @@ if exist "%USERPROFILE%\Portable\venv\" (
     )
 ) else (
     :: Desinstala os pacotes globalmente
-    "%DIR%" -m pip uninstall -y pywin32 pynput pygame pyautogui
+    "%DIR%" -m pip uninstall -y pywin32 pynput pygame pyautogui psutil
     :: Deleta a pasta Portable
     RD /S /Q "%USERPROFILE%\Portable"
     echo Global Version

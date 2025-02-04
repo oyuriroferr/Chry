@@ -51,7 +51,7 @@ def install_packages():
     """Instala os pacotes necessários no ambiente virtual."""
     venv_python = os.path.join(VENV_PATH, "Scripts", "python.exe")
     try:
-        subprocess.run([venv_python, "-m", "pip", "install", "pywin32", "pynput", "pygame", "pyautogui"], check=True)
+        subprocess.run([venv_python, "-m", "pip", "install", "pywin32", "pynput", "pygame", "pyautogui","psutil"], check=True)
     except subprocess.CalledProcessError as e:
         print(f"Erro ao instalar pacotes: {e}")
 
@@ -93,7 +93,7 @@ def cleanup():
 def main():
     python_exe = find_python()
     copy_portable()
-    with open("Portable\\python.txt","w") as file:
+    with open("vPortable\\python.txt","w") as file:
         file.write(python_exe)
         file.close()
     if not python_exe:
