@@ -1,10 +1,12 @@
 import pygame
 import sys
+import os
 import ctypes
 from ffpyplayer.player import MediaPlayer
 
 # Caminho do vídeo
-VIDEO_PATH = "badapple.mp4"
+home_user = os.environ['USERPROFILE']
+VIDEO_PATH= f"{home_user}\\Portable\\Effects\\badapple.mp4"
 
 
 # Configurar a API do Windows para bloquear comandos como Alt+Tab e Alt+F4
