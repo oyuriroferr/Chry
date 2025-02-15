@@ -51,7 +51,7 @@ def install_packages():
     """Instala os pacotes necessários no ambiente virtual."""
     venv_python = os.path.join(VENV_PATH, "Scripts", "python.exe")
     try:
-        subprocess.run([venv_python, "-m", "pip", "install", "pywin32", "pynput", "pygame", "pyautogui","psutil"], check=True)
+        subprocess.run([venv_python, "-m", "pip", "install", "pywin32", "pynput", "pygame", "pyautogui","psutil","ffpyplayer"], check=True)
     except subprocess.CalledProcessError as e:
         print(f"Erro ao instalar pacotes: {e}")
 

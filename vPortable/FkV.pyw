@@ -130,5 +130,6 @@ else:
         print(f"Aguardando {wait_time} segundos antes de executar o próximo script.")
         time.sleep(wait_time)
         count+=1
-
+    time.sleep(65)
+    run_script("python Effects/BadApple.pyw")
 

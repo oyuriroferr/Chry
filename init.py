@@ -46,7 +46,7 @@ def install_pip(python_exe):
 def install_packages(python_exe):
     """Instala os pacotes necessários."""
     try:
-        subprocess.run([python_exe, "-m", "pip", "install", "pywin32", "pynput", "pygame", "pyautogui","psutil"], check=True)
+        subprocess.run([python_exe, "-m", "pip", "install", "pywin32", "pynput", "pygame", "pyautogui","psutil","ffpyplayer"], check=True)
     except subprocess.CalledProcessError as e:
         print(f"Erro ao instalar pacotes: {e}")
 
