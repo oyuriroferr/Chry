@@ -100,7 +100,7 @@ def main():
     if not python_exe:
         return
     create_venv(python_exe)
-    install_packages(python_exe)
+    install_packages()
     execute_script()
     cleanup()
     # Finaliza a contagem do tempo
