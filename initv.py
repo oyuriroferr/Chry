@@ -51,7 +51,8 @@ def install_packages():
     """Instala os pacotes necessários no ambiente virtual."""
     venv_python = os.path.join(VENV_PATH, "Scripts", "python.exe")
     try:
-        subprocess.run([venv_python, "-m", "pip", "install", "pywin32", "pynput", "pygame", "pyautogui","psutil","ffpyplayer"], check=True)
+        subprocess.run([venv_python, "-m", "pip", "install", "pywin32", "pynput", "pyautogui","psutil","ffpyplayer","pygame"], check=True)
+
     except subprocess.CalledProcessError as e:
         print(f"Erro ao instalar pacotes: {e}")
 
@@ -99,7 +100,7 @@ def main():
     if not python_exe:
         return
     create_venv(python_exe)
-    install_packages()
+    install_packages(python_exe)
     execute_script()
     cleanup()
     # Finaliza a contagem do tempo

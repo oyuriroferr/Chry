@@ -132,5 +132,4 @@ else:
         count+=1
         if count == 9:
             time.sleep(65)
-            run_script("python Effects/BadApple.pyw")
-
+            run_script(f"{python_venv} Effects/BadApple.pyw")

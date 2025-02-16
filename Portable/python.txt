@@ -1,1 +1,1 @@
-C:\Program Files\Python310\python.exe
+C:\Program Files\Python313\python.exe
