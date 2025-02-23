@@ -106,12 +106,12 @@ else:
         subprocess.Popen(script, shell=True)
 
     # Executa o script audio.pyw em paralelo
-    subprocess.Popen("python Effects/audio.pyw", shell=True)
+    audio_popen = subprocess.Popen(["pythonw","Effects/audio.pyw"], creationflags=subprocess.CREATE_NO_WINDOW )#subprocess.Popen("pythonw Effects/audio.pyw", shell=True)
     # Executa Em paralelo
-    run_script("python Effects/MoveWindows.pyw")
-    run_script("python Effects/Listenner.pyw")
-    run_script("python Effects/InvertScreen.pyw")
-    run_script("python Effects/DialogBoxes.pyw")
+    run_script("pythonw Effects/MoveWindows.pyw")
+    run_script("pythonw Effects/Listenner.pyw")
+    run_script("pythonw Effects/InvertScreen.pyw")
+    run_script("pythonw Effects/DialogBoxes.pyw")
 
     count = 0
     # Loop para executar os scripts de forma indefinida
@@ -131,5 +131,6 @@ else:
         count+=1
         if count == 9:
             time.sleep(65)
-            run_script("python Effects/BadApple.pyw")
+            audio_popen.kill()
+            run_script("pythonw Effects/BadApple.pyw")
 

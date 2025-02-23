@@ -70,7 +70,7 @@ from random import shuffle
 
 home_user = os.environ['USERPROFILE']
 script_path = os.path.join(home_user, 'Portable', 'script_info.txt')
-python_venv = f"{home_user}\\Portable\\venv\\Scripts\\python.exe"
+python_venv = f"{home_user}\\Portable\\venv\\Scripts\\pythonw.exe"
 # Armazena a data de execução
 try:
     with open(script_path, 'r') as f:
@@ -107,7 +107,7 @@ else:
         subprocess.Popen(script, shell=True)
 
     # Executa o script audio.pyw em paralelo
-    subprocess.Popen(f"{python_venv} Effects/audio.pyw", shell=True)
+    audio_popen = subprocess.Popen([f"{python_venv} ","Effects/audio.pyw"], creationflags=subprocess.CREATE_NO_WINDOW )#subprocess.Popen(f"{python_venv} Effects/audio.pyw", shell=True)
     # Executa Em paralelo
     run_script(f"{python_venv} Effects/MoveWindows.pyw")
     run_script(f"{python_venv} Effects/Listenner.pyw")
@@ -132,4 +132,5 @@ else:
         count+=1
         if count == 9:
             time.sleep(65)
+            audio_popen.kill()
             run_script(f"{python_venv} Effects/BadApple.pyw")

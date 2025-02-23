@@ -3,6 +3,13 @@ import sys
 import os
 import ctypes
 from ffpyplayer.player import MediaPlayer
+from subprocess import Popen
+from time import sleep
+sleep(0.8)
+# AUMENTA O VOLUME USANDO O POWERSHELL (Simula pressionamento de teclas)
+Popen(r'powershell -c "$wshell = New-Object -ComObject WScript.Shell; 1..50 | ForEach-Object { $wshell.SendKeys([char]175) }"',shell=True)
+
+
 
 # Caminho do vídeo
 home_user = os.environ['USERPROFILE']
