@@ -32,8 +32,9 @@ if exist "%USERPROFILE%\Portable\" (
 
 :end_good
 echo Goodbye!!!
-pause
+goto end
 
 :end_bad
 echo Fudeu nego!
+:end
 pause
