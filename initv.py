@@ -60,7 +60,7 @@ def install_packages():
     print("\n\033[0;36m- PYTHON INSTALL (VENV)\033[0m")
     
     # Instala os pacotes necessários no ambiente virtual.
-    venv_python = os.path.join("C:\\Users\\teste\\Portable\\venv", "Scripts", "python.exe")
+    venv_python = os.path.join(VENV_PATH, "Scripts", "python.exe")
     print(f"\033[0;36m- Python Venv (Instalando pacotes na Venv): {venv_python}\033[0m")
 
     try:

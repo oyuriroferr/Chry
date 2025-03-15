@@ -41,10 +41,16 @@ if exist "%programfiles%\Python39\python.exe" (
     set "python_exe=%programfiles%\Python39\python.exe"
     goto execute
 )
+:: ETEC NOVOS
+if exist "%programfiles%\Python313\python.exe" (
+    echo %ESC%[31mEncontrado em:%programfiles%\Python313\python.exe
+    set "python_exe=%programfiles%\Python313\python.exe"
+    goto execute
+)
 
 :: Verifica no PROGRAMFILES
 echo %ESC%[31mVerificando em PROGRAMFILES:
-for /d %%D in ("%PROGRAMFILES%\Python*\") do (
+for /d %%D in ("%PROGRAMFILES%\Python***\") do (
     echo %ESC%[31mVerificando em: %%D
     if exist "%%D\python.exe" (
         set "python_exe=%%D\python.exe"
