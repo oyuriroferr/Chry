@@ -70,27 +70,17 @@ echo %ESC%[31mNenhuma versão do Python encontrada em APPDATA, LOCALAPPDATA ou P
 echo %ESC%[31mVerifique se o Python está instalado nas pastas AppData\Roaming, AppData\Local\Programs ou Program Files.
 echo.
 
-:: Verifica no PATH
-echo %ESC%[31mVerificando no PATH:
-for %%P in ("python" "python3") do (
-    where /R C:\ %%P.exe >nul 2>nul
-    if !errorlevel! == 0 (
-        for /f %%i in ('where %%P.exe') do (
-            set "python_exe=%%i"
-            goto execute
-        )
-    )
-)
-
-
-:: Se não encontrou Python no PATH
-echo %ESC%[31mNenhuma versão do Python encontrada no PATH.
-echo %ESC%[31mTente adicionar o Python ao seu PATH ou verifique se ele está instalado corretamente.
-echo.
-
 :: Se nenhuma versão do Python for encontrada
 echo %ESC%[31mNenhuma versão do Python foi encontrada no sistema.
+echo %ESC%[31mInstallando o Python...
+goto installPython
 exit /b
+
+:installPython
+start %~dp0python3133.exe /quiet /simple DefaultJustForMeTargetDir
+set "python_exe=%LOCALAPPDATA%\Programs\Python\Python313\python.exe"
+timeout /t 10 /nobreak
+goto execute
 
 :execute
 :: Executa o script com a primeira versão encontrada
@@ -98,7 +88,6 @@ echo %ESC%[31mPython encontrado: !python_exe!%ESC%[0m
 echo !python_exe!>python_path.txt
 "!python_exe!" initv.py
 ::powershell -NoExit -NoProfile -ExecutionPolicy Bypass -Command "& '!python_exe!' 'initv.py'"
-
 
 :setESC
 for /F "tokens=1,2 delims=#" %%a in ('"prompt #$H#$E# & echo on & for %%b in (1) do rem"') do (
