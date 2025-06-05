@@ -84,7 +84,7 @@ goto execute
 
 :execute
 :: Executa o script com a primeira versão encontrada
-acho.
+echo.
 echo %ESC%[31mPython encontrado: !python_exe!%ESC%[0m
 echo !python_exe!>python_path.txt
 "!python_exe!" initv.py
