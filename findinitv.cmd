@@ -17,7 +17,7 @@ for /d %%D in (%appdata_path%) do (
     )
 )
 
-:: Verifica no LOCALAPPDATA (corrigido para verificar diretórios exatos)
+:: Verifica no LOCALAPPDATA
 echo %ESC%[31mVerificando em LOCALAPPDATA 3.(13,10,9):
 if exist "%LOCALAPPDATA%\Programs\Python\Python39\python.exe" (
     echo %ESC%[31mEncontrado em: %LOCALAPPDATA%\Programs\Python\Python39
@@ -35,20 +35,17 @@ if exist "%LOCALAPPDATA%\Programs\Python\Python310\python.exe" (
     set "python_exe=%LOCALAPPDATA%\Programs\Python\Python310\python.exe"
     goto execute
 )
-:: Verifica no LOCALAPPDATA ETEC
+:: Verifica no PROGRAMFILES
 if exist "%programfiles%\Python39\python.exe" (
     echo %ESC%[31mEncontrado em:%programfiles%\Python39\python.exe
     set "python_exe=%programfiles%\Python39\python.exe"
     goto execute
 )
-:: ETEC NOVOS
 if exist "%programfiles%\Python313\python.exe" (
     echo %ESC%[31mEncontrado em:%programfiles%\Python313\python.exe
     set "python_exe=%programfiles%\Python313\python.exe"
     goto execute
 )
-
-:: Verifica no PROGRAMFILES
 echo %ESC%[31mVerificando em PROGRAMFILES:
 for /d %%D in ("%PROGRAMFILES%\Python***\") do (
     echo %ESC%[31mVerificando em: %%D
