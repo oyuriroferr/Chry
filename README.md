@@ -18,7 +18,6 @@ Ele foi criado para explorar o funcionamento do Python, brincar com automações
 - 🔍 **Busca:** Vasculha lugares como `AppData`, `LocalAppData`, `Program Files` e afins atrás do Python.  
 - 📦 **Instalação Automática:** Se não encontrar, baixa e instala o Python rapidinho, sem te incomodar.  
 - 🎨 **Efeitos Visuais:** Executa scripts que fazem seu PC parecer que ganhou vida (calma, é só visual).  
-- 📜 **Logs Bonitos:** Tudo bem colorido no terminal pra você acompanhar e se divertir com o que tá rolando.  
 
 ---
 
@@ -39,9 +38,9 @@ Um salve para o incrível [Python-gdi-repo](https://github.com/Leo-Aqua/Python-g
 
 ## ⚠️ Aviso Importante!
 
-> 🎩 Este projeto é **100% educativo e feito pra diversão**.  
-> 🔥 Use com responsabilidade. Só execute em ambientes onde sustos, gargalhadas e reações engraçadas sejam bem-vindos.  
-> 🤷‍♂️ Não me responsabilizo por sustos, confusões, ou aquele amigo que vai perguntar: _"O que diabos você rodou no meu PC?"_
+> Este projeto é **100% educativo e feito pra diversão**.  
+> Use com responsabilidade. Só execute em ambientes onde sustos, gargalhadas e reações engraçadas sejam bem-vindos.  
+> Não me responsabilizo por sustos, confusões, ou aquele amigo que vai perguntar: _"O que diabos você rodou no meu PC?"_
 
 ---
 
@@ -70,7 +69,6 @@ It was created to explore how Python works, play with Windows automations, and..
 - 🔍 **Search:** Scans places like `AppData`, `LocalAppData`, `Program Files`, and similar directories for Python.  
 - 📦 **Automatic Installation:** If it doesn’t find Python, it downloads and installs it quickly, without bothering you.  
 - 🎨 **Visual Effects:** Runs scripts that make your PC look like it came to life (don’t worry, it’s just visual).  
-- 📜 **Pretty Logs:** Everything appears in color in the terminal so you can follow along and enjoy what’s happening.  
 
 ---
 
@@ -91,9 +89,9 @@ A shout-out to the amazing [Python-gdi-repo](https://github.com/Leo-Aqua/Python-
 
 ## ⚠️ Important Notice!
 
-> 🎩 This project is **100% educational and made for fun**.  
-> 🔥 Use responsibly. Only run it in environments where scares, laughter, and amusing reactions are welcome.  
-> 🤷‍♂️ I am not responsible for scares, confusion, or that friend who will ask: _"What the heck did you run on my PC?"_
+> This project is **100% educational and made for fun**.  
+> Use responsibly. Only run it in environments where scares, laughter, and amusing reactions are welcome.  
+> I am not responsible for scares, confusion, or that friend who will ask: _"What the heck did you run on my PC?"_
 
 ---
 
